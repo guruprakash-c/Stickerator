@@ -24,7 +24,7 @@ export function StructuredData() {
     "softwareVersion": "1.0",
     "author": {
       "@type": "Organization",
-      "name": "AI Sticker Generator Team"
+      "name": "Laerer Labs - GuruPrakash"
     }
   }
 
