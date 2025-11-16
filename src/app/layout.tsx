@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Sticker Generator - Create Custom Stickers with Multiple AI Models",
+  title: "Stickerator - Create Custom Stickers with Multiple AI Models",
   description: "Generate amazing AI-powered stickers with DALL-E, Midjourney, Stable Diffusion and more. Choose from HD to 4K resolution. Copyright-free stickers for commercial use.",
   keywords: ["AI sticker generator", "DALL-E", "Midjourney", "Stable Diffusion", "AI art", "sticker maker", "custom stickers", "AI images", "4K stickers", "HD stickers", "copyright free"],
   authors: [{ name: "AI Sticker Generator Team" }],
