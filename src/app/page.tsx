@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -197,22 +198,24 @@ export default function StickerGenerator() {
   return (
     <>
       <StructuredData />
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-purple-950 dark:via-pink-950 dark:to-blue-950">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-slate-50 dark:from-blue-950 dark:via-indigo-950 dark:to-slate-950">
         <div className="container mx-auto px-4 py-8 max-w-7xl">
-          {/* Header with Auth */}
           <div className="flex justify-between items-center mb-8">
             <div className="flex items-center">
-              <Sparkles className="w-8 h-8 text-purple-600 mr-2" />
-              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Sticker Generator
-              </h1>
+                <Image
+                  src="/sr-logo.svg"
+                  alt="Stickerator"
+                  width={200}
+                  height={48}
+                  className="inline-block mr-3"
+                />
             </div>
             <AuthButton />
           </div>
           
           {/* Hero Section */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-5">
               Create Amazing AI Stickers
             </h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -319,7 +322,7 @@ export default function StickerGenerator() {
               <Button 
                 onClick={generateSticker} 
                 disabled={isGenerating}
-                className="w-full text-lg py-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-105"
+                className="w-full text-lg py-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-105"
               >
                 {isGenerating ? (
                   <>
@@ -441,8 +444,8 @@ export default function StickerGenerator() {
         <div className="mt-16 grid md:grid-cols-3 gap-6">
           <Card className="text-center">
             <CardContent className="pt-6">
-              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="w-6 h-6 text-purple-600" />
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Sparkles className="w-6 h-6 text-blue-600" />
               </div>
               <h3 className="font-semibold mb-2">Multiple AI Models</h3>
               <p className="text-sm text-gray-600">Choose from DALL-E, Midjourney, Stable Diffusion and more</p>
@@ -461,8 +464,8 @@ export default function StickerGenerator() {
           
           <Card className="text-center">
             <CardContent className="pt-6">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Download className="w-6 h-6 text-blue-600" />
+              <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Download className="w-6 h-6 text-slate-600" />
               </div>
               <h3 className="font-semibold mb-2">No Copyright Issues</h3>
               <p className="text-sm text-gray-600">All generated images are copyright-free for commercial use</p>

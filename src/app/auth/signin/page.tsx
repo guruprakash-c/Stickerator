@@ -9,12 +9,12 @@ import Link from 'next/link'
 
 export default function SignInPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-purple-950 dark:via-pink-950 dark:to-blue-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-pink-50 to-blue-50 dark:from-blue-950 dark:via-pink-950 dark:to-blue-950 flex items-center justify-center p-4">
       <Card className="w-full max-w-md shadow-xl">
         <CardHeader className="text-center">
           <div className="flex items-center justify-center mb-4">
-            <Sparkles className="w-8 h-8 text-purple-600 mr-2" />
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <Sparkles className="w-8 h-8 text-blue-600 mr-2" />
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Welcome Back
             </h1>
           </div>
@@ -35,9 +35,9 @@ export default function SignInPage() {
           <div className="text-center">
             <Link 
               href="/"
-              className="text-sm text-purple-600 hover:text-purple-700 underline"
+              className="text-sm text-blue-600 hover:text-blue-700 underline"
             >
-              ← Back to Sticker Generator
+              ← Back to Generator
             </Link>
           </div>
         </CardContent>

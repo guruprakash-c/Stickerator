@@ -18,28 +18,28 @@ export const metadata: Metadata = {
   title: "Stickerator - Create Custom Stickers with Multiple AI Models",
   description: "Generate amazing AI-powered stickers with DALL-E, Midjourney, Stable Diffusion and more. Choose from HD to 4K resolution. Copyright-free stickers for commercial use.",
   keywords: ["AI sticker generator", "DALL-E", "Midjourney", "Stable Diffusion", "AI art", "sticker maker", "custom stickers", "AI images", "4K stickers", "HD stickers", "copyright free"],
-  authors: [{ name: "AI Sticker Generator Team" }],
+  authors: [{ name: "Laerer Labs - GuruPrakash" }],
   icons: {
     icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
   openGraph: {
-    title: "AI Sticker Generator - Create Custom Stickers",
+    title: "Stickerator - Create Custom Stickers",
     description: "Generate amazing AI-powered stickers with multiple models and resolutions. No copyright issues!",
     url: "https://chat.z.ai",
-    siteName: "AI Sticker Generator",
+    siteName: "Stickerator",
     type: "website",
     images: [
       {
         url: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
         width: 1200,
         height: 630,
-        alt: "AI Sticker Generator",
+        alt: "Stickerator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Sticker Generator - Create Custom Stickers",
+    title: "Stickerator - Create Custom Stickers",
     description: "Generate amazing AI-powered stickers with multiple models and resolutions. No copyright issues!",
     images: ["https://z-cdn.chatglm.cn/z-ai/static/logo.svg"],
   },
