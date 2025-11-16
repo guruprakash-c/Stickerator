@@ -20,17 +20,17 @@ export const metadata: Metadata = {
   keywords: ["AI sticker generator", "DALL-E", "Midjourney", "Stable Diffusion", "AI art", "sticker maker", "custom stickers", "AI images", "4K stickers", "HD stickers", "copyright free"],
   authors: [{ name: "Laerer Labs - GuruPrakash" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "https://stickerator-umber.vercel.app/logo.svg",
   },
   openGraph: {
     title: "Stickerator - Create Custom Stickers",
     description: "Generate amazing AI-powered stickers with multiple models and resolutions. No copyright issues!",
-    url: "https://chat.z.ai",
+    url: "https://stickerator-umber.vercel.app",
     siteName: "Stickerator",
     type: "website",
     images: [
       {
-        url: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+        url: "https://stickerator-umber.vercel.app/logo.svg",
         width: 1200,
         height: 630,
         alt: "Stickerator",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Stickerator - Create Custom Stickers",
     description: "Generate amazing AI-powered stickers with multiple models and resolutions. No copyright issues!",
-    images: ["https://z-cdn.chatglm.cn/z-ai/static/logo.svg"],
+    images: ["https://stickerator-umber.vercel.app/logo.svg"],
   },
   robots: {
     index: true,

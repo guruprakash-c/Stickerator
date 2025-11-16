@@ -15,6 +15,7 @@ import { Loader2, Download, Sparkles, Image as ImageIcon, Settings, Zap, Palette
 import { toast } from '@/hooks/use-toast'
 import { StructuredData } from '@/components/structured-data'
 import { AuthButton, SignInButtons } from '@/components/auth-button'
+import { Footer } from '@/components/footer'
 
 const AI_MODELS = [
   { id: 'dall-e-3', name: 'DALL-E 3', description: 'High-quality, detailed images' },
@@ -322,7 +323,7 @@ export default function StickerGenerator() {
               <Button 
                 onClick={generateSticker} 
                 disabled={isGenerating}
-                className="w-full text-lg py-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-105"
+                className="w-full text-lg py-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-200 transform hover:scale-105"
               >
                 {isGenerating ? (
                   <>
@@ -473,6 +474,7 @@ export default function StickerGenerator() {
           </Card>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   )

@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Sparkles, Chrome, Github, Linkedin } from 'lucide-react'
 import { SignInButtons } from '@/components/auth-button'
+import { Footer } from '@/components/footer'
 import Link from 'next/link'
 
 export default function SignInPage() {
@@ -42,6 +43,7 @@ export default function SignInPage() {
           </div>
         </CardContent>
       </Card>
+      <Footer />
     </div>
   )
 }

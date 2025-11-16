@@ -9,7 +9,7 @@ export function StructuredData() {
     "operatingSystem": "Web",
     "offers": {
       "@type": "Offer",
-      "price": "0",
+      "price": "5.00",
       "priceCurrency": "USD"
     },
     "featureList": [
@@ -20,7 +20,7 @@ export function StructuredData() {
       "Commercial Use Allowed",
       "Instant Download"
     ],
-    "screenshot": "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    "screenshot": "https://stickerator-umber.vercel.app/logo.svg",
     "softwareVersion": "1.0",
     "author": {
       "@type": "Organization",
