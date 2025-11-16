@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import ZAI from 'z-ai-web-dev-sdk'
+// import { config } from 'z-ai-config'
 
 const MODEL_CONFIGS = {
   'dall-e-3': {
@@ -58,8 +59,17 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // console.log('Generating image with prompt:', enhancedPrompt)
+    // console.log('Model config:', modelConfig)
+    // console.log('Target resolution:', targetResolution)
+
     // Create ZAI instance
     const zai = await ZAI.create()
+    // const zai = await ZAI.create({
+    //   baseURL: config.baseURL,
+    //   timeout: config.timeout,
+    //   maxRetries: config.maxRetries
+    // });
 
     // Build the enhanced prompt
     const stylePrompt = STYLE_PROMPTS[style as keyof typeof STYLE_PROMPTS]
@@ -77,11 +87,20 @@ export async function POST(request: NextRequest) {
       n: 1
     })
 
+    console.log('ZAI Response:', response)
     // Get the base64 image data
     const imageBase64 = response.data[0]?.base64
-    
+
     if (!imageBase64) {
-      throw new Error('No image data received from AI service')
+      // throw new Error('No image data received from AI service')
+      console.error('No image data received from ZAI service')
+      return NextResponse.json(
+        {
+          error: 'No image data received from AI service',
+          details: 'The AI service returned no image data. Please try again.'
+        },
+        { status: 500 }
+      )
     }
 
     // Convert base64 to a data URL
@@ -99,9 +118,9 @@ export async function POST(request: NextRequest) {
 
   } catch (error: any) {
     console.error('Sticker generation error:', error)
-    
+
     return NextResponse.json(
-      { 
+      {
         error: 'Failed to generate sticker',
         details: error.message || 'Unknown error occurred'
       },

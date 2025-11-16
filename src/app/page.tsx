@@ -15,7 +15,8 @@ import { Loader2, Download, Sparkles, Image as ImageIcon, Settings, Zap, Palette
 import { toast } from '@/hooks/use-toast'
 import { StructuredData } from '@/components/structured-data'
 import { AuthButton, SignInButtons } from '@/components/auth-button'
-import { Footer } from '@/components/footer'
+import { Footer } from '@/components/footer' 
+import { GeneratorSkeleton } from '@/components/generator-skeleton'
 
 const AI_MODELS = [
   { id: 'dall-e-3', name: 'DALL-E 3', description: 'High-quality, detailed images' },
@@ -51,6 +52,7 @@ export default function StickerGenerator() {
   const [selectedStyle, setSelectedStyle] = useState('cartoon')
   const [isGenerating, setIsGenerating] = useState(false)
   const [generatedImages, setGeneratedImages] = useState<Array<{ url: string; prompt: string; model: string; resolution: string }>>([])
+  const [isPageLoading, setIsPageLoading] = useState(true)
 
   // Add global image protection on mount
   React.useEffect(() => {
@@ -65,6 +67,12 @@ export default function StickerGenerator() {
         })
       }
     }
+    // Simulate page loading time
+    const timer = setTimeout(() => {
+      setIsPageLoading(false)
+    }, 1500) // 1.5 seconds loading time
+
+    //return () => clearTimeout(timer)
 
     const preventDragStart = (e: DragEvent) => {
       const target = e.target as HTMLElement
@@ -245,18 +253,22 @@ export default function StickerGenerator() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              {/* Keyword Input */}
-              <div className="space-y-2">
-                <Label htmlFor="keyword">Keyword or Prompt</Label>
-                <Input
-                  id="keyword"
-                  placeholder="e.g., cute cat, happy dog, rainbow unicorn"
-                  value={keyword}
-                  onChange={(e) => setKeyword(e.target.value)}
-                  className="text-lg"
-                />
-              </div>
-
+              {isPageLoading ? (
+                <GeneratorSkeleton />
+              ) : (
+                <>
+                  {/* Keyword Input */}
+                  <div className="space-y-2">
+                    <Label htmlFor="keyword">Keyword or Prompt</Label>
+                    <Input
+                      id="keyword"
+                      placeholder="e.g., cute cat, happy dog, rainbow unicorn"
+                      value={keyword}
+                      onChange={(e) => setKeyword(e.target.value)}
+                      className="text-lg" 
+                      autoComplete="off"
+                    />
+                  </div>
               {/* Style Selection */}
               <div className="space-y-2">
                 <Label className="flex items-center gap-2">
@@ -337,9 +349,10 @@ export default function StickerGenerator() {
                   </>
                 )}
               </Button>
+            </>
+              )}
             </CardContent>
           </Card>
-
           {/* Generated Images Panel */}
           <Card className="shadow-xl">
             <CardHeader>
